@@ -9,9 +9,10 @@ const phases = [
   {emoji: '🌘', name: 'waning crescent', weight: 6.3825},
 ]
 
+const oneDay = 24 * 60 * 60 * 1000
 const today = new Date()
-const tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000))
-const yesterday = new Date(today.getTime() - (24 * 60 * 60 * 1000))
+const tomorrow = new Date(today.getTime() + oneDay)
+const yesterday = new Date(today.getTime() - oneDay)
 
 const phase = day => SunCalc.getMoonIllumination(day).phase
 const moon = phases[stepPhase(phase(today))]
