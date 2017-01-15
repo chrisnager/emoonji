@@ -1,11 +1,11 @@
-const admin = require("firebase-admin")
+const admin = require('firebase-admin')
 const serviceAccount = require('./service-account.json')
 const MoonPhases = require('./moon-phases.json')
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://emoji.firebaseio.com"
-});
+  databaseURL: 'https://emoji.firebaseio.com',
+})
 
 const months = [
   "January",
@@ -83,7 +83,7 @@ const views = {
       ]
     )
   ],
-  "default": [
+  default: [
     createAttachment(
       "I didn't understand that. Are you interested in knowing what tonight's moon is?",
       [
@@ -92,7 +92,7 @@ const views = {
       ]
     )
   ],
-  "about": [
+  about: [
     createAttachment(
       "I'm based in Brooklyn, NY and all my moon data is in US/Eastern Time Zone time. I was created by Chris Nager and launched on his wife's 400th lunar monthiversary.",
       [
@@ -102,7 +102,7 @@ const views = {
       ]
     )
   ],
-  "not-now": [
+  notNow: [
     createAttachment(
       "Oh ok, I'm here whenever you want to know.",
       [
@@ -111,7 +111,7 @@ const views = {
       ]
     )
   ],
-  "tonight": [
+  tonight: [
     createAttachment(
       "Tonight's moon is a " + MoonPhases.phases[year][month][day].phase + ". " + MoonPhases.phases[year][month][day].moon,
       [
@@ -121,7 +121,7 @@ const views = {
       ]
     )
   ],
-  "week": [
+  week: [
     createAttachment(
       getThisWeeksMoons(),
       [
@@ -131,7 +131,7 @@ const views = {
       ]
     )
   ],
-  "month": [
+  month: [
     createAttachment(
       getThisMonthsMoons(),
       [
@@ -141,7 +141,7 @@ const views = {
       ]
     )
   ],
-  "year": [
+  year: [
     createAttachment(
       "Jan\n🌓5\n🌝12\n🌗19\n🌚27\n\nFeb\n🌓3\n🌝10\n🌗18\n🌚26\n\nMar\n🌓5\n🌝12\n🌗20\n🌚27\n\nApr\n🌓3\n🌝11\n🌗19\n🌚26\n\nMay\n🌓2\n🌝10\n🌗18\n🌚25\n\nJun\n🌓1\n🌝9\n🌗17\n🌚23\n🌓30\n\nJul\n🌝9\n🌗16\n🌚23\n🌓30\n\nAug\n🌝7\n🌗14\n🌚21\n🌓29\n\nSep\n🌝6\n🌗13\n🌚20\n🌓27\n\nOct\n🌝5\n🌗12\n🌚19\n🌓27\n\nNov\n🌝4\n🌗10\n🌚18\n🌓26\n\nDec\n🌝3\n🌗10\n🌚18\n🌓26",
       [
@@ -153,16 +153,14 @@ const views = {
   ]
 }
 
-console.log(date, year, month, day, views)
-
-
 admin.database().ref('/').set({
-  'about': views['about'],
-  'default': views.default,
-  'month': views['month'],
-  'not-now': views['not-now'],
-  'tonight': views['tonight'],
-  'week': views['week'],
-  'welcome': views.welcome,
-  'year': views['year'],
+  about: views.about,
+  default: views.default,
+  month: views.month,
+  'not-now': views.notNow,
+  tonight: views.tonight,
+  week: views.week,
+  welcome: views.welcome,
+  year: views.year,
 })
+

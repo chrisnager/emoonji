@@ -7,7 +7,6 @@
   "author": "Chris Nager <cnager@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "firebase": "^3.6.5",
     "firebase-admin": "^4.0.4"
   }
 }
