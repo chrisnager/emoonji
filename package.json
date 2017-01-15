@@ -1,0 +1,13 @@
+{
+  "name": "emoonji",
+  "version": "1.0.0",
+  "description": "A friendly chatbot that sends the current moon phases with emojis",
+  "main": "index.js",
+  "repository": "git@github.com:chrisnager/emoonji.git",
+  "author": "Chris Nager <cnager@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^3.6.5",
+    "firebase-admin": "^4.0.4"
+  }
+}
