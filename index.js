@@ -22,10 +22,32 @@ const months = [
   "December",
 ]
 
+const weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+]
+
+const emoonjis = {
+  "full moon": "🌕",
+  "waning gibbous": "🌖",
+  "last quarter": "🌗",
+  "waning crescent": "🌘",
+  "new moon": "🌑",
+  "waxing crescent": "🌒",
+  "first quarter": "🌓",
+  "waxing gibbous": "🌔",
+}
+
 const date = new Date()
 const year = date.getFullYear()
 const month = date.getMonth() + 1
 const day = date.getDate()
+const weekday = date.getDay()
 
 function createText(text) {
   return ({
@@ -62,12 +84,45 @@ function createUrlButton(url, title) {
   })
 }
 
+function getTonightsMoon() {
+  const phase = MoonPhases[year][month][day].phase
+
+  return "Tonight's moon is a " + phase + ". " + emoonjis[phase]
+}
+
 function getThisWeeksMoons() {
   return "Sun Jan 15\n🌖 Waning gibbous\n\nMon Jan 16\n🌖 Waning gibbous\n\nTue Jan 17\n🌖 Waning gibbous\n\nWed Jan 18\n🌗 Last quarter\n\nThu Jan 19\n🌗 Last quarter\n\nFri Jan 20\n🌗 Last quarter\n\nSat Jan 21\n🌗 Last quarter"
 }
 
 function getThisMonthsMoons() {
   return "Thu Jan 5\n🌓 First quarter\n\nThu Jan 12\n🌝 Full moon!\n\nThu Jan 19\n🌗 Last quarter"
+}
+
+function getThisYearsMoons() {
+  let yearString = year + "\n\n"
+
+  Object.keys(MoonPhases[year]).forEach(
+    monthNumber => {
+      yearString += months[monthNumber - 1].slice(0, 3) + "\n"
+
+      function checkForMajorPhases(specificDay) {
+        const isMajorPhase = MoonPhases[year][monthNumber][specificDay].major || false
+
+        return isMajorPhase
+      }
+
+      const majorPhases = Object.keys(MoonPhases[year][monthNumber]).filter(checkForMajorPhases)
+
+      yearString += majorPhases.map(item => (yearString, emoonjis[MoonPhases[year][monthNumber][item].phase] + item + (monthNumber === majorPhases.length - 1 ? "" : "\n"))).join('')
+
+      yearString += monthNumber === "12" ? "" : "\n"
+    }
+  )
+
+  // console.log(yearString)
+  // console.log("2017\n\nJan\n🌓5\n🌕12\n🌗19\n🌑27\n\nFeb\n🌓3\n🌕10\n🌗18\n🌑26\n\nMar\n🌓5\n🌕12\n🌗20\n🌑27\n\nApr\n🌓3\n🌕11\n🌗19\n🌑26\n\nMay\n🌓2\n🌕10\n🌗18\n🌑25\n\nJun\n🌓1\n🌕9\n🌗17\n🌑23\n🌓30\n\nJul\n🌕9\n🌗16\n🌑23\n🌓30\n\nAug\n🌕7\n🌗14\n🌑21\n🌓29\n\nSep\n🌕6\n🌗13\n🌑20\n🌓27\n\nOct\n🌕5\n🌗12\n🌑19\n🌓27\n\nNov\n🌕4\n🌗10\n🌑18\n🌓26\n\nDec\n🌕3\n🌗10\n🌑18\n🌓26")
+
+  return yearString
 }
 
 const views = {
@@ -113,7 +168,7 @@ const views = {
   ],
   tonight: [
     createAttachment(
-      "Tonight's moon is a " + MoonPhases.phases[year][month][day].phase + ". " + MoonPhases.phases[year][month][day].moon,
+      getTonightsMoon(),
       [
         createButton("week", "This week's moons"),
         createButton("month", months[month - 1] + "'s phases"),
@@ -143,7 +198,7 @@ const views = {
   ],
   year: [
     createAttachment(
-      "Jan\n🌓5\n🌝12\n🌗19\n🌚27\n\nFeb\n🌓3\n🌝10\n🌗18\n🌚26\n\nMar\n🌓5\n🌝12\n🌗20\n🌚27\n\nApr\n🌓3\n🌝11\n🌗19\n🌚26\n\nMay\n🌓2\n🌝10\n🌗18\n🌚25\n\nJun\n🌓1\n🌝9\n🌗17\n🌚23\n🌓30\n\nJul\n🌝9\n🌗16\n🌚23\n🌓30\n\nAug\n🌝7\n🌗14\n🌚21\n🌓29\n\nSep\n🌝6\n🌗13\n🌚20\n🌓27\n\nOct\n🌝5\n🌗12\n🌚19\n🌓27\n\nNov\n🌝4\n🌗10\n🌚18\n🌓26\n\nDec\n🌝3\n🌗10\n🌚18\n🌓26",
+      getThisYearsMoons(),
       [
         createButton("tonight", "Tonight's moon"),
         createButton("week", "This week's moons"),
@@ -163,4 +218,3 @@ admin.database().ref('/').set({
   welcome: views.welcome,
   year: views.year,
 })
-
