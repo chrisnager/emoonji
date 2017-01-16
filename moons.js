@@ -16,7 +16,7 @@ const {
 function getTonightsMoon() {
   const phase = MoonPhases[year][month][day].phase
 
-  return 'Tonight\'s moon is a ' + phase.toLowerCase() + '. ' + emoonjis[phase]
+  return `Tonight's moon is a ${phase.toLowerCase()}. ${emoonjis[phase]}`
 }
 
 function getThisWeeksMoons() {
