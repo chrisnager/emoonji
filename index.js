@@ -119,9 +119,6 @@ function getThisYearsMoons() {
     }
   )
 
-  // console.log(yearString)
-  // console.log("2017\n\nJan\n🌓5\n🌕12\n🌗19\n🌑27\n\nFeb\n🌓3\n🌕10\n🌗18\n🌑26\n\nMar\n🌓5\n🌕12\n🌗20\n🌑27\n\nApr\n🌓3\n🌕11\n🌗19\n🌑26\n\nMay\n🌓2\n🌕10\n🌗18\n🌑25\n\nJun\n🌓1\n🌕9\n🌗17\n🌑23\n🌓30\n\nJul\n🌕9\n🌗16\n🌑23\n🌓30\n\nAug\n🌕7\n🌗14\n🌑21\n🌓29\n\nSep\n🌕6\n🌗13\n🌑20\n🌓27\n\nOct\n🌕5\n🌗12\n🌑19\n🌓27\n\nNov\n🌕4\n🌗10\n🌑18\n🌓26\n\nDec\n🌕3\n🌗10\n🌑18\n🌓26")
-
   return yearString
 }
 
