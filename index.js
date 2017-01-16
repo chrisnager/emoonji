@@ -33,14 +33,14 @@ const weekdays = [
 ]
 
 const emoonjis = {
-  "full moon": "🌕",
-  "waning gibbous": "🌖",
-  "last quarter": "🌗",
-  "waning crescent": "🌘",
-  "new moon": "🌑",
-  "waxing crescent": "🌒",
-  "first quarter": "🌓",
-  "waxing gibbous": "🌔",
+  "Full moon": "🌕",
+  "Waning gibbous": "🌖",
+  "Last quarter": "🌗",
+  "Waning crescent": "🌘",
+  "New moon": "🌑",
+  "Waxing crescent": "🌒",
+  "First quarter": "🌓",
+  "Waxing gibbous": "🌔",
 }
 
 const date = new Date()
@@ -84,10 +84,14 @@ function createUrlButton(url, title) {
   })
 }
 
+function padLeft(n) {
+  return ("" + n).length > 1 ? ("" + n) : ("0" + n)
+}
+
 function getTonightsMoon() {
   const phase = MoonPhases[year][month][day].phase
 
-  return "Tonight's moon is a " + phase + ". " + emoonjis[phase]
+  return "Tonight's moon is a " + phase.toLowerCase() + ". " + emoonjis[phase]
 }
 
 function getThisWeeksMoons() {
@@ -95,7 +99,36 @@ function getThisWeeksMoons() {
 }
 
 function getThisMonthsMoons() {
-  return "Thu Jan 5\n🌓 First quarter\n\nThu Jan 12\n🌝 Full moon!\n\nThu Jan 19\n🌗 Last quarter"
+  let monthString = months[month - 1] + " " + year + "\n\n"
+
+  function checkForMajorPhases(specificDay) {
+    const isMajorPhase = MoonPhases[year][month][specificDay].major || false
+
+    return isMajorPhase
+  }
+
+  const majorPhases = Object.keys(MoonPhases[year][month]).filter(checkForMajorPhases)
+
+  monthString += majorPhases.map(item => {
+    const d = new Date(year + "-" + padLeft(month) + "-" + padLeft(item))
+
+    const majorMonthPhase = (
+      weekdays[d.getDay() + 1].slice(0, 3)
+      + " "
+      + months[month - 1].slice(0, 3)
+      + " "
+      + item
+      + "\n"
+      + emoonjis[MoonPhases[year][month][item].phase]
+      + " "
+      + MoonPhases[year][month][item].phase
+      + (month === majorPhases.length - 1 ? "" : "\n\n")
+    )
+
+    return majorMonthPhase
+  }).join("")
+
+  return monthString
 }
 
 function getThisYearsMoons() {
@@ -113,7 +146,7 @@ function getThisYearsMoons() {
 
       const majorPhases = Object.keys(MoonPhases[year][monthNumber]).filter(checkForMajorPhases)
 
-      yearString += majorPhases.map(item => (yearString, emoonjis[MoonPhases[year][monthNumber][item].phase] + item + (monthNumber === majorPhases.length - 1 ? "" : "\n"))).join('')
+      yearString += majorPhases.map(item => (emoonjis[MoonPhases[year][monthNumber][item].phase] + item + (monthNumber === majorPhases.length - 1 ? "" : "\n"))).join('')
 
       yearString += monthNumber === "12" ? "" : "\n"
     }
