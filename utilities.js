@@ -5,7 +5,7 @@ const day = date.getDate()
 const weekday = date.getDay()
 
 function padLeft(n) {
-  return ("" + n).length > 1 ? ("" + n) : ("0" + n)
+  return ('' + n).length > 1 ? ('' + n) : ('0' + n)
 }
 
 exports.date = date

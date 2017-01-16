@@ -24,45 +24,45 @@ const {
 } = require('./utilities')
 
 const welcome = [
-  createText("Hi! I'm Emoonji."),
-  createText("I can send you the latest phases of the moon."),
+  createText('Hi! I\'m Emoonji.'),
+  createText('I can send you the latest phases of the moon.'),
   createAttachment(
-    "Would you like to know the phase of tonight's moon?",
+    'Would you like to know the phase of tonight\'s moon?',
     [
-      createButton("tonight", "Yes, tonight's moon"),
-      createButton("not-now", "Not now"),
-      createButton("about", "More about Emoonji"),
+      createButton('tonight', 'Yes, tonight\'s moon'),
+      createButton('not-now', 'Not now'),
+      createButton('about', 'More about Emoonji'),
     ]
   )
 ]
 
 const generic = [
   createAttachment(
-    "I didn't understand that. Are you interested in knowing what tonight's moon is?",
+    'I didn\'t understand that. Are you interested in knowing what tonight\'s moon is?',
     [
-      createButton("tonight", "Tonight's moon"),
-      createButton("not-now", "Not now"),
+      createButton('tonight', 'Tonight\'s moon'),
+      createButton('not-now', 'Not now'),
     ]
   )
 ]
 
 const about = [
   createAttachment(
-    "I'm based in Brooklyn, NY and all my moon data is in US/Eastern Time Zone time. I was createD by Chris Nager and launched on his wife's 400th lunar monthiversary.",
+    'I\'m based in Brooklyn, NY and all my moon data is in US/Eastern Time Zone time. I was created by Chris Nager and launched on his wife\'s 400th lunar monthiversary.',
     [
-      createUrlButton("https://twitter.com/chrisnager", "Who?"),
-      createButton("tonight", "Tonight's moon"),
-      createButton("week", "This week's moons"),
+      createUrlButton('https://twitter.com/chrisnager', 'Who?'),
+      createButton('tonight', 'Tonight\'s moon'),
+      createButton('week', 'This week\'s moons'),
     ]
   )
 ]
 
 const notNow = [
   createAttachment(
-    "Oh ok, I'm here whenever you want to know.",
+    'Oh ok, I\'m here whenever you want to know.',
     [
-      createButton("tonight", "Tonight's moon"),
-      createButton("week", "This week's moons"),
+      createButton('tonight', 'Tonight\'s moon'),
+      createButton('week', 'This week\'s moons'),
     ]
   )
 ]
@@ -71,9 +71,9 @@ const tonight = [
   createAttachment(
     getTonightsMoon(),
     [
-      createButton("week", "This week's moons"),
-      createButton("month", months[month - 1] + "'s phases"),
-      createButton("year", year + " moon phases"),
+      createButton('week', 'This week\'s moons'),
+      createButton('month', months[month - 1] + '\'s phases'),
+      createButton('year', year + ' moon phases'),
     ]
   )
 ]
@@ -82,9 +82,9 @@ const week = [
   createAttachment(
     getThisWeeksMoons(),
     [
-      createButton("tonight", "Tonight's moon"),
-      createButton("month", months[month - 1] + "'s phases"),
-      createButton("year", year + " moon phases"),
+      createButton('tonight', 'Tonight\'s moon'),
+      createButton('month', months[month - 1] + '\'s phases'),
+      createButton('year', year + ' moon phases'),
     ]
   )
 ]
@@ -93,9 +93,9 @@ const monthView = [
   createAttachment(
     getThisMonthsMoons(),
     [
-      createButton("tonight", "Tonight's moon"),
-      createButton("week", "This week's moons"),
-      createButton("year", year + " moon phases"),
+      createButton('tonight', 'Tonight\'s moon'),
+      createButton('week', 'This week\'s moons'),
+      createButton('year', year + ' moon phases'),
     ]
   )
 ]
@@ -104,9 +104,9 @@ const yearView = [
   createAttachment(
     getThisYearsMoons(),
     [
-      createButton("tonight", "Tonight's moon"),
-      createButton("week", "This week's moons"),
-      createButton("month", months[month - 1] + "'s phases"),
+      createButton('tonight', 'Tonight\'s moon'),
+      createButton('week', 'This week\'s moons'),
+      createButton('month', months[month - 1] + '\'s phases'),
     ]
   )
 ]
