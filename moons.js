@@ -35,7 +35,7 @@ function getThisMonthsMoons() {
   const majorPhases = Object.keys(MoonPhases[year][month]).filter(checkForMajorPhases)
 
   monthString += majorPhases.map(item => {
-    const d = new Date(year + '-' + padLeft(month) + '-' + padLeft(item))
+    const d = new Date(`${year}-${padLeft(month)}-${padLeft(item)}`)
 
     const majorMonthPhase = (
       weekdays[d.getDay() + 1].slice(0, 3)

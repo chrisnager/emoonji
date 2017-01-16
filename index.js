@@ -9,7 +9,7 @@ const {
   week,
   welcome,
   yearView,
-} = require('./views')
+} = require('./blocks')
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
