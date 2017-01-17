@@ -1,3 +1,4 @@
+const moment = require('moment-timezone')
 const MoonPhases = require('./moon-phases.json')
 const {padLeft} = require('./utilities')
 const {
@@ -21,7 +22,17 @@ function getTonightsMoon() {
 }
 
 function getThisWeeksMoons() {
-  return 'Sun Jan 15\n🌖 Waning gibbous\n\nMon Jan 16\n🌖 Waning gibbous\n\nTue Jan 17\n🌖 Waning gibbous\n\nWed Jan 18\n🌗 Last quarter\n\nThu Jan 19\n🌗 Last quarter\n\nFri Jan 20\n🌗 Last quarter\n\nSat Jan 21\n🌗 Last quarter'
+  const startOfWeek = moment().startOf('week').format('D')
+  const endOfWeek = moment().endOf('week').format('D')
+  let weekString = ''
+
+  for (let i = +startOfWeek; i <= endOfWeek; i++) {
+    const phase = MoonPhases[year][month][i].phase
+
+    weekString += `${moment(`${year}-${month}-${i}`).format('ddd MMM D')}\n${emoonjis[phase]} ${phase}\n\n`
+  }
+
+  return weekString
 }
 
 function getThisMonthsMoons() {

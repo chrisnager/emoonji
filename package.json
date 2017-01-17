@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "cron": "^1.2.1",
-    "firebase-admin": "^4.0.4"
+    "firebase-admin": "^4.0.4",
+    "moment-timezone": "^0.5.11"
   }
 }
