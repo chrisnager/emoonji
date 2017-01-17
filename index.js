@@ -1,14 +1,15 @@
+const {CronJob} = require('cron')
 const admin = require('firebase-admin')
 const serviceAccount = require('./service-account.json')
 const {
   about,
   generic,
-  monthView,
+  monthView: month,
   notNow,
   tonight,
   week,
   welcome,
-  yearView,
+  yearView: year,
 } = require('./blocks')
 
 admin.initializeApp({
@@ -16,13 +17,17 @@ admin.initializeApp({
   databaseURL: 'https://emoji.firebaseio.com',
 })
 
-admin.database().ref('/').set({
-  about,
-  generic,
-  month: monthView,
-  'not-now': notNow,
-  tonight,
-  week,
-  welcome,
-  year: yearView,
-})
+new CronJob('0 0 0 * * *', () => {
+  admin.database().ref('/').set({
+    about,
+    generic,
+    month,
+    'not-now': notNow,
+    tonight,
+    week,
+    welcome,
+    year,
+  })
+
+  console.log('\x1b[36m', `🌝  Database updated on ${new Date()}.`, '\x1b[0m')
+}, null, true, 'America/New_York')
