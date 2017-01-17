@@ -1,16 +1,15 @@
 const date = new Date()
-const year = date.getFullYear()
-const month = date.getMonth() + 1
-const day = date.getDate()
-const weekday = date.getDay()
+const YEAR = date.getFullYear()
+const MONTH = date.getMonth() + 1
+const DAY = date.getDate()
+const WEEKDAY = date.getDay()
 
 function padLeft(n) {
   return ('' + n).length > 1 ? ('' + n) : ('0' + n)
 }
 
-exports.date = date
-exports.year = year
-exports.month = month
-exports.day = day
-exports.weekday = weekday
+exports.YEAR = YEAR
+exports.MONTH = MONTH
+exports.DAY = DAY
+exports.WEEKDAY = WEEKDAY
 exports.padLeft = padLeft

@@ -4,12 +4,12 @@ const serviceAccount = require('./service-account.json')
 const {
   about,
   generic,
-  monthView: month,
+  month,
   notNow,
   tonight,
   week,
   welcome,
-  yearView: year,
+  year,
 } = require('./blocks')
 
 admin.initializeApp({

@@ -1,8 +1,5 @@
-const {
-  months,
-  weekdays,
-  emoonjis,
-} = require('./constants')
+const {months} = require('./constants')
+const {YEAR, MONTH} = require('./utilities')
 const {
   createText,
   createAttachment,
@@ -15,13 +12,6 @@ const {
   getThisMonthsMoons,
   getThisYearsMoons,
 } = require('./moons')
-const {
-  date,
-  year,
-  month,
-  day,
-  weekday,
-} = require('./utilities')
 
 const welcome = [
   createText(`Hi! I'm Emoonji.`),
@@ -72,8 +62,8 @@ const tonight = [
     getTonightsMoon(),
     [
       createButton(`week`, `This week's moons`),
-      createButton(`month`, months[month - 1] + `'s phases`),
-      createButton(`year`, year + ` moon phases`),
+      createButton(`month`, months[MONTH - 1] + `'s phases`),
+      createButton(`year`, YEAR + ` moon phases`),
     ]
   )
 ]
@@ -83,30 +73,30 @@ const week = [
     getThisWeeksMoons(),
     [
       createButton(`tonight`, `Tonight's moon`),
-      createButton(`month`, months[month - 1] + `'s phases`),
-      createButton(`year`, year + ` moon phases`),
+      createButton(`month`, months[MONTH - 1] + `'s phases`),
+      createButton(`year`, YEAR + ` moon phases`),
     ]
   )
 ]
 
-const monthView = [
+const month = [
   createAttachment(
     getThisMonthsMoons(),
     [
       createButton(`tonight`, `Tonight's moon`),
       createButton(`week`, `This week's moons`),
-      createButton(`year`, year + ` moon phases`),
+      createButton(`year`, YEAR + ` moon phases`),
     ]
   )
 ]
 
-const yearView = [
+const year = [
   createAttachment(
     getThisYearsMoons(),
     [
       createButton(`tonight`, `Tonight's moon`),
       createButton(`week`, `This week's moons`),
-      createButton(`month`, months[month - 1] + `'s phases`),
+      createButton(`month`, months[MONTH - 1] + `'s phases`),
     ]
   )
 ]
@@ -117,5 +107,5 @@ exports.about = about
 exports.notNow = notNow
 exports.tonight = tonight
 exports.week = week
-exports.monthView = monthView
-exports.yearView = yearView
+exports.month = month
+exports.year = year
