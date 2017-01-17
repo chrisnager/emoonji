@@ -13,10 +13,10 @@ const {
 } = require('./utilities')
 
 function getTonightsMoon() {
-  const phase = MoonPhases[YEAR][MONTH][DAY].phase.toLowerCase()
+  const phase = MoonPhases[YEAR][MONTH][DAY].phase
   const message = MoonPhases[YEAR][MONTH][DAY].message
 
-  return message || `Tonight's moon is a ${phase}. ${emoonjis[phase]}`
+  return message || `Tonight's moon is a ${phase.toLowerCase()}. ${emoonjis[phase]}`
 }
 
 function getThisWeeksMoons() {
