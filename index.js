@@ -17,7 +17,7 @@ admin.initializeApp({
   databaseURL: 'https://emoji.firebaseio.com',
 })
 
-// new CronJob('0 0 0 * * *', () => {
+new CronJob('0 0 0 * * *', () => {
   admin.database().ref('/').set({
     about,
     generic,
@@ -30,4 +30,4 @@ admin.initializeApp({
   })
 
   console.log('\x1b[36m', `🌝  Database updated on ${new Date()}.`, '\x1b[0m')
-// }, null, true, 'America/New_York')
+}, null, true, 'America/New_York')
