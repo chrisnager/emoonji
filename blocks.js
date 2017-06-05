@@ -5,6 +5,7 @@ const {
   createAttachment,
   createButton,
   createUrlButton,
+  createGallery,
 } = require('./creation')
 const {
   getTonightsMoon,
@@ -69,13 +70,8 @@ const tonight = [
 ]
 
 const week = [
-  createAttachment(
-    getThisWeeksMoons(),
-    [
-      createButton(`tonight`, `Tonight's moon`),
-      createButton(`month`, months[MONTH - 1] + `'s phases`),
-      createButton(`year`, YEAR + ` moon phases`),
-    ]
+  createGallery(
+    getThisWeeksMoons()
   )
 ]
 

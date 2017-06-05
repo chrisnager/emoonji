@@ -1,5 +1,6 @@
 const moment = require('moment-timezone')
 const MoonPhases = require('./moon-phases.json')
+const {createButton} = require('./creation')
 const {padLeft} = require('./utilities')
 const {
   months,
@@ -22,15 +23,23 @@ function getTonightsMoon() {
 function getThisWeeksMoons() {
   const startOfWeek = moment().startOf('week').format('D')
   const endOfWeek = moment().endOf('week').format('D')
-  let weekString = ''
+  let weekArray = []
 
-  for (let i = +startOfWeek; i <= endOfWeek; i++) {
+  for (let i = +startOfWeek > +endOfWeek ? 1 : +startOfWeek; i <= +endOfWeek; i++) {
     const phase = MoonPhases[YEAR][MONTH][i].phase
 
-    weekString += `${moment(`${YEAR}-${MONTH}-${i}`).format('ddd MMM D')}\n${emoonjis[phase]} ${phase}\n\n`
+    weekArray.push({
+      title: `${moment(`${YEAR}-${MONTH}-${i}`).format('ddd MMM D')}`,
+      subtitle: `${emoonjis[phase]} ${phase}`,
+      buttons: [
+        createButton(`tonight`, `Tonight's moon`),
+        createButton(`month`, months[MONTH - 1] + `'s phases`),
+        createButton(`year`, YEAR + ` moon phases`),
+      ]
+    })
   }
 
-  return weekString
+  return weekArray
 }
 
 function getThisMonthsMoons() {
@@ -48,7 +57,7 @@ function getThisMonthsMoons() {
     const d = new Date(`${YEAR}-${padLeft(MONTH)}-${padLeft(item)}`)
 
     const majorMonthPhase = (
-      weekdays[d.getDay() + 1].slice(0, 3)
+      weekdays[d.getDay() + 1 === 7 ? 0 : d.getDay() + 1].slice(0, 3)
       + ' '
       + months[MONTH - 1].slice(0, 3)
       + ' '

@@ -33,7 +33,20 @@ function createUrlButton(url, title) {
   })
 }
 
+function createGallery(elements) {
+  return ({
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        elements,
+      }
+    }
+  })
+}
+
 exports.createText = createText
 exports.createAttachment = createAttachment
 exports.createButton = createButton
 exports.createUrlButton = createUrlButton
+exports.createGallery = createGallery
