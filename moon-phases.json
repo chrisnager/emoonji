@@ -2748,13 +2748,13 @@
       "12": {
         "phase": "Waning crescent",
         "visibility": "3%",
-        "age": "28.01 days",
-        "major": "true"
+        "age": "28.01 days"
       },
       "13": {
         "phase": "New moon",
         "visibility": "1%",
-        "age": "29.15 days"
+        "age": "29.15 days",
+        "major": "true"
       },
       "14": {
         "phase": "New moon",
@@ -2784,13 +2784,13 @@
       "19": {
         "phase": "First quarter",
         "visibility": "40%",
-        "age": "6.40 days",
-        "major": "true"
+        "age": "6.40 days"
       },
       "20": {
         "phase": "First quarter",
         "visibility": "51%",
-        "age": "7.44 days"
+        "age": "7.44 days",
+        "major": "true"
       },
       "21": {
         "phase": "First quarter",
@@ -2825,13 +2825,13 @@
       "27": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.12 days",
-        "major": "true"
+        "age": "14.12 days"
       },
       "28": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "15.03 days"
+        "age": "15.03 days",
+        "major": "true"
       },
       "29": {
         "phase": "Full moon",
