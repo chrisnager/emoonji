@@ -1906,7 +1906,8 @@
       "1": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.05 days"
+        "age": "14.05 days",
+        "major": "true"
       },
       "2": {
         "phase": "Full moon",
@@ -1941,7 +1942,8 @@
       "8": {
         "phase": "Last quarter",
         "visibility": "55%",
-        "age": "21.72 days"
+        "age": "21.72 days",
+        "major": "true"
       },
       "9": {
         "phase": "Last quarter",
@@ -1981,7 +1983,8 @@
       "16": {
         "phase": "New",
         "visibility": "1%",
-        "age": "28.99 days"
+        "age": "28.99 days",
+        "major": "true"
       },
       "17": {
         "phase": "New",
@@ -2021,7 +2024,8 @@
       "24": {
         "phase": "First quarter",
         "visibility": "46%",
-        "age": "6.96 days"
+        "age": "6.96 days",
+        "major": "true"
       },
       "25": {
         "phase": "First quarter",
@@ -2056,7 +2060,8 @@
       "31": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.69 days"
+        "age": "14.69 days",
+        "major": "true"
       }
     },
     "2": {
@@ -2093,7 +2098,8 @@
       "7": {
         "phase": "Last quarter",
         "visibility": "52%",
-        "age": "21.98 days"
+        "age": "21.98 days",
+        "major": "true"
       },
       "8": {
         "phase": "Last quarter",
@@ -2133,7 +2139,8 @@
       "15": {
         "phase": "New",
         "visibility": "1%",
-        "age": "29.18 days"
+        "age": "29.18 days",
+        "major": "true"
       },
       "16": {
         "phase": "New",
@@ -2173,7 +2180,8 @@
       "23": {
         "phase": "First quarter",
         "visibility": "52%",
-        "age": "7.55 days"
+        "age": "7.55 days",
+        "major": "true"
       },
       "24": {
         "phase": "First quarter",
@@ -2205,7 +2213,8 @@
       "1": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.19 days"
+        "age": "14.19 days",
+        "major": "true"
       },
       "2": {
         "phase": "Full moon",
@@ -2245,7 +2254,8 @@
       "9": {
         "phase": "Last quarter",
         "visibility": "50%",
-        "age": "22.15 days"
+        "age": "22.15 days",
+        "major": "true"
       },
       "10": {
         "phase": "Last quarter",
@@ -2285,7 +2295,8 @@
       "17": {
         "phase": "New",
         "visibility": "1%",
-        "age": "29.48 days"
+        "age": "29.48 days",
+        "major": "true"
       },
       "18": {
         "phase": "New",
@@ -2320,7 +2331,8 @@
       "24": {
         "phase": "First quarter",
         "visibility": "49%",
-        "age": "7.22 days"
+        "age": "7.22 days",
+        "major": "true"
       },
       "25": {
         "phase": "First quarter",
@@ -2355,7 +2367,8 @@
       "31": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.75 days"
+        "age": "14.75 days",
+        "major": "true"
       }
     },
     "4": {
@@ -2397,7 +2410,8 @@
       "8": {
         "phase": "Last quarter",
         "visibility": "49%",
-        "age": "22.31 days"
+        "age": "22.31 days",
+        "major": "true"
       },
       "9": {
         "phase": "Last quarter",
@@ -2432,7 +2446,8 @@
       "15": {
         "phase": "New",
         "visibility": "1%",
-        "age": "28.92 days"
+        "age": "28.92 days",
+        "major": "true"
       },
       "16": {
         "phase": "New",
@@ -2467,7 +2482,8 @@
       "22": {
         "phase": "First quarter",
         "visibility": "46%",
-        "age": "6.94 days"
+        "age": "6.94 days",
+        "major": "true"
       },
       "23": {
         "phase": "First quarter",
@@ -2502,7 +2518,8 @@
       "29": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.24 days"
+        "age": "14.24 days",
+        "major": "true"
       },
       "30": {
         "phase": "Full moon",
@@ -2544,7 +2561,8 @@
       "7": {
         "phase": "Last quarter",
         "visibility": "56%",
-        "age": "21.62 days"
+        "age": "21.62 days",
+        "major": "true"
       },
       "8": {
         "phase": "Last quarter",
@@ -2584,7 +2602,8 @@
       "15": {
         "phase": "New",
         "visibility": "1%",
-        "age": "0.00 days"
+        "age": "0.00 days",
+        "major": "true"
       },
       "16": {
         "phase": "New",
@@ -2614,7 +2633,8 @@
       "21": {
         "phase": "First quarter",
         "visibility": "43%",
-        "age": "6.69 days"
+        "age": "6.69 days",
+        "major": "true"
       },
       "22": {
         "phase": "First quarter",
@@ -2654,7 +2674,8 @@
       "29": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.67 days"
+        "age": "14.67 days",
+        "major": "true"
       },
       "30": {
         "phase": "Full moon",
@@ -2696,7 +2717,8 @@
       "6": {
         "phase": "Last quarter",
         "visibility": "53%",
-        "age": "21.90 days"
+        "age": "21.90 days",
+        "major": "true"
       },
       "7": {
         "phase": "Last quarter",
@@ -2726,7 +2748,8 @@
       "12": {
         "phase": "Waning crescent",
         "visibility": "3%",
-        "age": "28.01 days"
+        "age": "28.01 days",
+        "major": "true"
       },
       "13": {
         "phase": "New",
@@ -2761,7 +2784,8 @@
       "19": {
         "phase": "First quarter",
         "visibility": "40%",
-        "age": "6.40 days"
+        "age": "6.40 days",
+        "major": "true"
       },
       "20": {
         "phase": "First quarter",
@@ -2801,7 +2825,8 @@
       "27": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.12 days"
+        "age": "14.12 days",
+        "major": "true"
       },
       "28": {
         "phase": "Full moon",
@@ -2848,7 +2873,8 @@
       "6": {
         "phase": "Last quarter",
         "visibility": "49%",
-        "age": "22.32 days"
+        "age": "22.32 days",
+        "major": "true"
       },
       "7": {
         "phase": "Last quarter",
@@ -2878,7 +2904,8 @@
       "12": {
         "phase": "New",
         "visibility": "1%",
-        "age": "28.80 days"
+        "age": "28.80 days",
+        "major": "true"
       },
       "13": {
         "phase": "New",
@@ -2913,7 +2940,8 @@
       "19": {
         "phase": "First quarter",
         "visibility": "47%",
-        "age": "7.06 days"
+        "age": "7.06 days",
+        "major": "true"
       },
       "20": {
         "phase": "First quarter",
@@ -2953,7 +2981,8 @@
       "27": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.45 days"
+        "age": "14.45 days",
+        "major": "true"
       },
       "28": {
         "phase": "Full moon",
@@ -2995,7 +3024,8 @@
       "4": {
         "phase": "Last quarter",
         "visibility": "53%",
-        "age": "21.88 days"
+        "age": "21.88 days",
+        "major": "true"
       },
       "5": {
         "phase": "Last quarter",
@@ -3030,7 +3060,8 @@
       "11": {
         "phase": "New",
         "visibility": "1%",
-        "age": "0.10 days"
+        "age": "0.10 days",
+        "major": "true"
       },
       "12": {
         "phase": "New",
@@ -3065,7 +3096,8 @@
       "18": {
         "phase": "First quarter",
         "visibility": "52%",
-        "age": "7.54 days"
+        "age": "7.54 days",
+        "major": "true"
       },
       "19": {
         "phase": "First quarter",
@@ -3105,7 +3137,8 @@
       "26": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.77 days"
+        "age": "14.77 days",
+        "major": "true"
       },
       "27": {
         "phase": "Full moon",
@@ -3142,7 +3175,8 @@
       "2": {
         "phase": "Last quarter",
         "visibility": "57%",
-        "age": "21.51 days"
+        "age": "21.51 days",
+        "major": "true"
       },
       "3": {
         "phase": "Last quarter",
@@ -3177,7 +3211,8 @@
       "9": {
         "phase": "New",
         "visibility": "1%",
-        "age": "29.26 days"
+        "age": "29.26 days",
+        "major": "true"
       },
       "10": {
         "phase": "New",
@@ -3212,7 +3247,8 @@
       "16": {
         "phase": "First quarter",
         "visibility": "46%",
-        "age": "6.94 days"
+        "age": "6.94 days",
+        "major": "true"
       },
       "17": {
         "phase": "First quarter",
@@ -3252,7 +3288,8 @@
       "24": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.18 days"
+        "age": "14.18 days",
+        "major": "true"
       },
       "25": {
         "phase": "Full moon",
@@ -3294,7 +3331,8 @@
       "2": {
         "phase": "Last quarter",
         "visibility": "50%",
-        "age": "22.24 days"
+        "age": "22.24 days",
+        "major": "true"
       },
       "3": {
         "phase": "Last quarter",
@@ -3324,7 +3362,8 @@
       "8": {
         "phase": "New",
         "visibility": "1%",
-        "age": "28.83 days"
+        "age": "28.83 days",
+        "major": "true"
       },
       "9": {
         "phase": "New",
@@ -3364,7 +3403,8 @@
       "16": {
         "phase": "First quarter",
         "visibility": "48%",
-        "age": "7.16 days"
+        "age": "7.16 days",
+        "major": "true"
       },
       "17": {
         "phase": "First quarter",
@@ -3404,7 +3444,8 @@
       "24": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.55 days"
+        "age": "14.55 days",
+        "major": "true"
       },
       "25": {
         "phase": "Full moon",
@@ -3439,7 +3480,8 @@
       "31": {
         "phase": "Last quarter",
         "visibility": "53%",
-        "age": "21.93 days"
+        "age": "21.93 days",
+        "major": "true"
       }
     },
     "11": {
@@ -3476,7 +3518,8 @@
       "7": {
         "phase": "New",
         "visibility": "1%",
-        "age": "29.36 days"
+        "age": "29.36 days",
+        "major": "true"
       },
       "8": {
         "phase": "New",
@@ -3516,7 +3559,8 @@
       "15": {
         "phase": "First quarter",
         "visibility": "49%",
-        "age": "7.28 days"
+        "age": "7.28 days",
+        "major": "true"
       },
       "16": {
         "phase": "First quarter",
@@ -3556,7 +3600,8 @@
       "23": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "15.03 days"
+        "age": "15.03 days",
+        "major": "true"
       },
       "24": {
         "phase": "Full moon",
@@ -3586,7 +3631,8 @@
       "29": {
         "phase": "Last quarter",
         "visibility": "56%",
-        "age": "21.60 days"
+        "age": "21.60 days",
+        "major": "true"
       },
       "30": {
         "phase": "Last quarter",
@@ -3628,7 +3674,8 @@
       "7": {
         "phase": "New",
         "visibility": "1%",
-        "age": "0.18 days"
+        "age": "0.18 days",
+        "major": "true"
       },
       "8": {
         "phase": "New",
@@ -3668,7 +3715,8 @@
       "15": {
         "phase": "First quarter",
         "visibility": "51%",
-        "age": "7.40 days"
+        "age": "7.40 days",
+        "major": "true"
       },
       "16": {
         "phase": "First quarter",
@@ -3703,7 +3751,8 @@
       "22": {
         "phase": "Full moon",
         "visibility": "100%",
-        "age": "14.47 days"
+        "age": "14.47 days",
+        "major": "true"
       },
       "23": {
         "phase": "Full moon",
@@ -3738,7 +3787,8 @@
       "29": {
         "phase": "Last quarter",
         "visibility": "49%",
-        "age": "22.24 days"
+        "age": "22.24 days",
+        "major": "true"
       },
       "30": {
         "phase": "Last quarter",
