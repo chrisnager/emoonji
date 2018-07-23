@@ -76,27 +76,47 @@ function getThisMonthsMoons() {
 }
 
 function getThisYearsMoons() {
-  let yearString = YEAR + '\n\n'
+  let yearArray = []
 
-  Object.keys(MoonPhases[YEAR]).forEach(
-    monthNumber => {
-      yearString += months[monthNumber - 1].slice(0, 3) + '\n'
-
-      function checkForMajorPhases(specificDay) {
-        const isMajorPhase = MoonPhases[YEAR][monthNumber][specificDay].major || false
-
-        return isMajorPhase
-      }
-
-      const majorPhases = Object.keys(MoonPhases[YEAR][monthNumber]).filter(checkForMajorPhases)
-
-      yearString += majorPhases.map(item => (emoonjis[MoonPhases[YEAR][monthNumber][item].phase] + item + (monthNumber === majorPhases.length - 1 ? '' : '\n'))).join('')
-
-      yearString += monthNumber === '12' ? '' : '\n'
+  for (let i = 1; i <= 12; i++) {
+    function checkForMajorPhases(specificDay) {
+      const isMajorPhase = MoonPhases[YEAR][i][specificDay].major || false
+  
+      return isMajorPhase
     }
-  )
+  
+    const majorPhases = Object.keys(MoonPhases[YEAR][i]).filter(checkForMajorPhases)
+  
+    const subtitle = majorPhases.map(item => {
+      const d = new Date(`${YEAR}-${padLeft(i)}-${padLeft(item)}`)
+      const phase = MoonPhases[YEAR][i][item].phase
 
-  return yearString
+      const majorMonthPhase = (
+        emoonjis[phase]
+        + ' '
+        + item
+        + ' - '
+        + (phase === 'First quarter' ? 'First ¼' : phase === 'Last quarter' ? 'Last ¼' : phase)
+        + (item === majorPhases.length - 1 ? '' : '\n')
+      )
+  
+      return majorMonthPhase
+    }).join('')
+  
+    console.log(`${months[i - 1]} ${YEAR}\n`, subtitle)
+
+    yearArray.push({
+      title: `${months[i - 1]} ${YEAR}`,
+      subtitle,
+      buttons: [
+        createButton(`tonight`, `Tonight's moon`),
+        createButton(`week`, `This week's moons`),
+        createButton(`month`, months[MONTH - 1] + `'s phases`),
+     ]
+    })
+  }
+
+  return [yearArray.slice(0, 6), yearArray.slice(6, 12)]
 }
 
 exports.getTonightsMoon = getTonightsMoon

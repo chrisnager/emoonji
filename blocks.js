@@ -87,13 +87,11 @@ const month = [
 ]
 
 const year = [
-  createAttachment(
-    getThisYearsMoons(),
-    [
-      createButton(`tonight`, `Tonight's moon`),
-      createButton(`week`, `This week's moons`),
-      createButton(`month`, months[MONTH - 1] + `'s phases`),
-    ]
+  createGallery(
+    getThisYearsMoons()[0]
+  ),
+  createGallery(
+    getThisYearsMoons()[1]
   )
 ]
 
