@@ -24,12 +24,13 @@ function getThisWeeksMoons() {
   const startOfWeek = moment().startOf('week').format('D')
   const endOfWeek = moment().endOf('week').format('D')
   let weekArray = []
+  let d = 0
 
   for (let i = +startOfWeek > +endOfWeek ? 1 : +startOfWeek; i <= +endOfWeek; i++) {
     const phase = MoonPhases[YEAR][MONTH][i].phase
 
     weekArray.push({
-      title: `${moment(`${YEAR}-${MONTH}-${i}`).format('ddd MMM D')}`,
+      title: `${weekdays[d]}, ${months[MONTH - 1]} ${i}`,
       subtitle: `${emoonjis[phase]} ${phase}`,
       buttons: [
         createButton(`tonight`, `Tonight's moon`),
@@ -38,6 +39,8 @@ function getThisWeeksMoons() {
       ]
     })
   }
+
+  d++
 
   return weekArray
 }
@@ -102,8 +105,6 @@ function getThisYearsMoons() {
   
       return majorMonthPhase
     }).join('')
-  
-    console.log(`${months[i - 1]} ${YEAR}\n`, subtitle)
 
     yearArray.push({
       title: `${months[i - 1]} ${YEAR}`,
