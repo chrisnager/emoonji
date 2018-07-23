@@ -33,14 +33,14 @@ function getThisWeeksMoons() {
       title: `${weekdays[d]}, ${months[MONTH - 1]} ${i}`,
       subtitle: `${emoonjis[phase]} ${phase}`,
       buttons: [
-        createButton(`tonight`, `Tonight's moon`),
+        createButton(`tonight`, `Tonigh t's moon`),
         createButton(`month`, months[MONTH - 1] + `'s phases`),
         createButton(`year`, YEAR + ` moon phases`),
       ]
     })
-  }
 
-  d++
+    d++
+  }
 
   return weekArray
 }
